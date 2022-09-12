@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
     <title>SketchGame</title>
+    <script type="text/javascript" src = "canvas.js" defer></script>
+    <style>
+        #canvas {
+            position: absolute;
+            z-index: 0;
+        }
+    </style>
   </head>
   <body>
     <h1>Sublime Lime's Sketch Game</h1>
     <canvas id="canvas" width="500" height="500"></canvas>
     <canvas id="grid" width="500" height="500"></canvas>
     <br>
-    <input id="Removalbutton" type="button" value="Remove Last Pixel" onclick="remove();"/>
-    <input id="Black" type="button" value="Black" onclick="black();"/>
-    <input id="Red" type="button" value="Red" onclick="red();"/>
-    <input id="Orange" type="button" value="Orange" onclick="orange();"/>
-    <input id="Yellow" type="button" value="Yellow" onclick="yellow();"/>
-    <input id="Green" type="button" value="Green" onclick="green();"/>
-    <input id="Blue" type="button" value="Blue" onclick="blue();"/>
-    <input id="Purple" type="button" value="Purple" onclick="purple();"/>
-    <script type="text/javascript" src = "canvas.js"></script>
+    <button id="Removalbutton" onclick="remove();">Clear Last Pixel</button>
+    <button id="Black" onclick="setColor('black');">Black</button>
+    <button id="Red" onclick="setColor('red');">Red</button>
+    <button id="Orange" onclick="setColor('orange');">Orange</button>
+    <button id="Yellow" onclick="setColor('yellow');">Yellow</button>
+    <button id="Green" onclick="setColor('green');">Green</button>
+    <button id="Blue" onclick="setColor('blue');">Blue</button>
+    <button id="Purple" onclick="setColor('purple');">Purple</button>
   </body>
 </html>
