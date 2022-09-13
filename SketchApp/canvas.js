@@ -13,11 +13,13 @@ let undoListY = [];
 let randomArt = 0;
 let imgDataGame = []
 let imgDataUser = []
+var score = 0
 // important stuff!!!
 const dim = 5;
 const unitWidth = width / dim;
 const unitHeight = height / dim;
-const clearTime = 1000
+const clearTime = 5000
+document.getElementById('scoreDisp').innerHTML = "Score " + score;
 //Gets coordinates and determines pixel placement, then draw pixels
 function onDown(event) {
     //gets client mouse cords
@@ -52,13 +54,18 @@ function setColor(color) {
     ctx.fillStyle = color;
 }
 function clearScreen(){
-    ctx.clearRect(0,0,500,500);
+    ctx.clearRect(0,0,unitWidth,unitHeight);
     ctx.fillStyle = "black";
 }
 function checkDrawing(){
-    imgDataUser = ctx.getImageData(0, 0, 500, 500);
+    imgDataUser = ctx.getImageData(0, 0, unitWidth, unitHeight);
     if (JSON.stringify(imgDataGame) == JSON.stringify(imgDataUser)){
         clearScreen();
+        score++
+        document.getElementById('scoreDisp').innerHTML = "Score " + score;
+    } else {
+        score=0
+        document.getElementById('scoreDisp').innerHTML = "Score " + score;
     }
 }
 //draws image and removes after x seconds
@@ -77,7 +84,7 @@ function artDraw(){
             ctx.fillRect(200,400,100,100);
         break;
       }
-    imgDataGame = ctx.getImageData(0, 0, 500, 500);
+    imgDataGame = ctx.getImageData(0, 0, unitWidth, unitHeight);
     setTimeout(clearScreen, clearTime);
     console.log(imgDataGame);
 }
