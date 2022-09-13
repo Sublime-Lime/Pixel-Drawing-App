@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>SketchGame</title>
+    <script type="text/javascript" src = "canvas.js" defer></script>
+    <style>
+        #canvas {
+            position: absolute;
+            z-index: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Sublime Lime's Sketch Game</h1>
+    <p id="scoreDisp"></p>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <canvas id="grid" width="500" height="500"></canvas>
+    <br>
+    <button id="Removalbutton" onclick="remove();">Clear Last Pixel</button>
+    <button id="Black" onclick="setColor('black');">Black</button>
+    <button id="Red" onclick="setColor('red');">Red</button>
+    <button id="Orange" onclick="setColor('orange');">Orange</button>
+    <button id="Yellow" onclick="setColor('yellow');">Yellow</button>
+    <button id="Green" onclick="setColor('green');">Green</button>
+    <button id="Blue" onclick="setColor('blue');">Blue</button>
+    <button id="Purple" onclick="setColor('purple');">Purple</button>
+    <button id="StartGame" onclick="artDraw();">Start Game</button>
+    <button id="UserImage" onclick="checkDrawing();">Check Drawing</button>
+    
+  </body>
+</html>
