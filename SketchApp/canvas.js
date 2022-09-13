@@ -8,10 +8,16 @@ ctx.fillStyle = "black";
 // history vars
 let xlast = 0;
 let ylast = 0;
+let undoListX = [];
+let undoListY = [];
+let randomArt = 0;
+let imgDataGame = []
+let imgDataUser = []
 // important stuff!!!
 const dim = 5;
 const unitWidth = width / dim;
 const unitHeight = height / dim;
+const clearTime = 1000
 //Gets coordinates and determines pixel placement, then draw pixels
 function onDown(event) {
     //gets client mouse cords
@@ -22,9 +28,8 @@ function onDown(event) {
     //Info for testing code
     console.log(x);
     console.log(y);
-    console.log(square);
-    console.log(xlast);
-    console.log(ylast);
+    console.log(undoListX[undoListX.length -1]);
+    console.log(undoListY[undoListY.length -1]);
     ctx.fillRect(
         squareX * unitWidth,
         squareY * unitHeight,
@@ -33,15 +38,50 @@ function onDown(event) {
     );
     xlast = squareX * unitWidth;
     ylast = squareY * unitHeight;
+    undoListX.push(xlast);
+    undoListY.push(ylast);
 }
 //Removes Pixels
 function remove() {
-    ctx.clearRect(xlast, ylast, 100, 100);
+    ctx.clearRect(undoListX[undoListX.length -1], undoListY[undoListY.length -1], 100, 100);
     console.log("deleted");
+    undoListX = undoListX.slice(0, -1);
+    undoListY = undoListY.slice(0, -1);
 }
 function setColor(color) {
     ctx.fillStyle = color;
 }
+function clearScreen(){
+    ctx.clearRect(0,0,500,500);
+    ctx.fillStyle = "black";
+}
+function checkDrawing(){
+    imgDataUser = ctx.getImageData(0, 0, 500, 500);
+    if (JSON.stringify(imgDataGame) == JSON.stringify(imgDataUser)){
+        clearScreen();
+    }
+}
+//draws image and removes after x seconds
+function artDraw(){
+    randomArt = Math.floor(Math.random() * 0 + 1);
+    console.log(randomArt)
+    switch(randomArt) {
+        case 1:
+            //heart
+            ctx.fillStyle = "red"
+            ctx.fillRect(100,0,100,100);
+            ctx.fillRect(300,0,100,100);
+            ctx.fillRect(0,100,500,100);
+            ctx.fillRect(0,200,500,100);
+            ctx.fillRect(100,300,300,100);
+            ctx.fillRect(200,400,100,100);
+        break;
+      }
+    imgDataGame = ctx.getImageData(0, 0, 500, 500);
+    setTimeout(clearScreen, clearTime);
+    console.log(imgDataGame);
+}
+
 //Listener
 canvas.addEventListener("mousedown", onDown);
 //grid
