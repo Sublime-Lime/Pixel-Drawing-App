@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
+    <img id="chicken" src="https://www.dropbox.com/s/u325kxn60wl367y/chicken.png?dl=0" crossorigin="anonymous" hidden>
     <title>SketchGame</title>
     <script type="text/javascript" src = "canvas.js" defer></script>
     <style>
@@ -12,7 +13,7 @@
             position: absolute;
             z-index: 0;
         }
-    </style>
+        </style>
   </head>
   <body>
     <h1>Sublime Lime's Sketch Game</h1>
@@ -28,8 +29,10 @@
     <button id="Green" onclick="setColor('green');">Green</button>
     <button id="Blue" onclick="setColor('blue');">Blue</button>
     <button id="Purple" onclick="setColor('purple');">Purple</button>
+    <button id="White" onclick="setColor('white');">White</button>
     <button id="StartGame" onclick="artDraw();">Start Game</button>
     <button id="UserImage" onclick="checkDrawing();">Check Drawing</button>
+    <button id="PullData" onclick="pull();">Get Image Data</button>
     
   </body>
 </html>

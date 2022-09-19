@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 const canvas = document.querySelector("#canvas");
 const { width, height } = canvas;
@@ -14,6 +15,7 @@ let undoListY = [];
 let randomArt = 0;
 let imgDataGame = [];
 let imgDataUser = [];
+let imgDataDev = [];
 var score = 0;
 let example = 0;
 // important stuff!!!
@@ -86,21 +88,19 @@ function artDraw(){
     console.log(randomArt)
     switch(randomArt) {
         case 1:
-            //heart
-            ctx.fillStyle = "red"
-            ctx.fillRect(100,0,100,100);
-            ctx.fillRect(300,0,100,100);
-            ctx.fillRect(0,100,500,100);
-            ctx.fillRect(0,200,500,100);
-            ctx.fillRect(100,300,300,100);
-            ctx.fillRect(200,400,100,100);
+            ctx.drawImage(chicken, 0,0)
         break;
       }
     imgDataGame = ctx.getImageData(0, 0, width, height);
     setTimeout(clearScreen, clearTime);
     console.log(imgDataGame);
 }
-
+function pull(){
+    imgDataDev = ctx.getImageData(0, 0, width, height);
+    clearScreen();
+    ctx.drawImage(imgDataDev, 0, 0, 8, 8)
+    console.log(imgDataDev);
+}
 //Listener
 canvas.addEventListener("mousedown", onDown);
 //grid
