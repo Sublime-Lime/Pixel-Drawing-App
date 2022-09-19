@@ -7,59 +7,92 @@
     }
 #canvas {
     border: 1px solid black;
-    width: 500px;
-    height: 500px;
+    width: 800px;
+    height: 800px;
 }
 #grid {
     border: 1px solid black;
-    width: 500px;
-    height: 500px;
+    width: 800px;
+    height: 800px;
 }
 #Removalbutton{
-    background-color: red;
-    color: black;
-    border: 2px solid red;
+    background-image: linear-gradient(45deg, #ff0000 25%, #000000 25%, #000000 50%, #ff0000 50%, #ff0000 75%, #000000 75%, #000000 100%);
+    background-size: 28.28px 28.28px;
+    color: white;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Black{
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+    background-color:  black;
+    color: white;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Red{
-    background-color: white;
+    background-color:  red;
     color: black;
-    border: 2px solid red;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Orange{
-    background-color: white;
+    background-color:  orange;
     color: black;
-    border: 2px solid orange;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Yellow{
-    background-color: white;
+    background-color: yellow;
     color: black;
-    border: 2px solid yellow;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Green{
-    background-color: white;
+    background-color: green;
     color: black;
-    border: 2px solid green;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Blue{
-    background-color: white;
+    background-color: blue;
     color: black;
-    border: 2px solid Blue;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Purple{
-    background-color: white;
+    background-color: purple;
     color: black;
-    border: 2px solid Purple;
     display: block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
